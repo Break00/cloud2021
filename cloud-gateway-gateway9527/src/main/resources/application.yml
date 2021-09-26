@@ -1,0 +1,28 @@
+server:
+  port: 9527
+
+spring:
+  application:
+    name: cloud-gateway-gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true #
+      routes:
+        - id: payment_route           # 路由Id
+#          uri: http://localhost:8001
+          uri: lb://cloud-payment-service # 匹配后提供服务的路由地址，lb后跟提供服务的微服务名
+          predicates:  # 断言
+            - Path=/payment/get/**
+#            - After=2021-03-17T22:01:39.998+08:00[Asia/Shanghai] # 此时间之后访问通过
+
+debug: true
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:7001/eureka
+#      defaultZone: http://eureka7002.com:7002/ eureka/,http://eureka7001.com:7001/eureka/

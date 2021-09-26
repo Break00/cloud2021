@@ -1,0 +1,15 @@
+###################注册中心########################
+【组件】    【语言】     【CAP】     【服务健康检查】
+Eureka       Java         AP           可配支持
+Consul       Go           CP            支持
+Zookeeper    Java         CP            支持
+Nacos        Java        AP/CP          支持
+
+C——一致性
+A——可用性
+P——分区容错性
+
+【Feign/OpenFeign和Ribbon】
+
+
+【服务熔断/降级/限流】

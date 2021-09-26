@@ -1,0 +1,33 @@
+server:
+  port: 5566
+
+spring:
+  application:
+    name: cloud-config-client
+  cloud:
+    config:
+      profile: test
+#      discovery:
+#        enabled: true
+#        service-id: cloud-config-server
+      uri: http://localhost:3344
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:7001/eureka
+
+#暴露监控断点  curl -X POST http://localhost:5566/actuator/refresh 通知刷新
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+

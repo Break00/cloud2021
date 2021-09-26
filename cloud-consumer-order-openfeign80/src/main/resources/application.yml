@@ -1,0 +1,32 @@
+server:
+  port: 80
+
+spring:
+  application:
+    name: cloud-order-service
+  zipkin: # 链路追踪
+    base-url: http://localhost:9411
+  sleuth:
+    sampler:
+      # 采样频率 [0,1]
+      probability: 1
+
+#debug: true
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:7001/eureka
+#      defaultZone: http://eureka7002.com:7002/eureka/,http://eureka7001.com:7001/eureka/
+
+# 设置feign客户端超时时间（openFeign默认支持Ribbon）
+ribbon:
+  ReadTimeout: 5000
+  ConnectTimeout: 5000
+
+logging:
+  level:
+    # feign日志以什么级别监控哪个接口
+    com.jason.lee.service.PaymentFeignService: debug

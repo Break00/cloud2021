@@ -1,0 +1,37 @@
+# Default ignored files
+.idea/**
+target/**
+*.iml
+
+# Project exclude paths
+/cloud-alibaba-config-client3377/target/
+/cloud-alibaba-consumer-order83/target/
+/cloud-alibaba-consumer-order84/target/
+/cloud-alibaba-provider-payment9003/target/
+/cloud-alibaba-provider-payment9004/target/
+/cloud-alibaba-provider-payment9010/target/
+/cloud-alibaba-sentinel-8401/target/
+/cloud-common/target/
+/cloud-config-client4433/target/
+/cloud-config-client5566/target/
+/cloud-config-server3344/target/
+/cloud-consumer-hystrix-dashboard9002/target/
+/cloud-consumer-order80/target/
+/cloud-consumer-order-consul80/target/
+/cloud-consumer-order-openfeign80/target/
+/cloud-consumer-order-openfeign-hystrix80/target/
+/cloud-consumer-order-zk80/target/
+/cloud-eureka-server7001/target/
+/cloud-eureka-server7002/target/
+/cloud-gateway-gateway9527/target/
+/cloud-provider-payment8001/target/
+/cloud-provider-payment8002/target/
+/cloud-provider-payment-consul8006/target/
+/cloud-provider-payment-hystrix8001/target/
+/cloud-provider-payment-zk8004/target/
+/cloud-seata-account2003/target/
+/cloud-seata-order2001/target/
+/cloud-seata-storage2002/target/
+/cloud-stream-rabbitmq-consumer8802/target/
+/cloud-stream-rabbitmq-consumer8803/target/
+/cloud-stream-rabbitmq-provider8801/target/

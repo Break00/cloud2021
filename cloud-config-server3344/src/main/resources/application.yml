@@ -1,0 +1,38 @@
+server:
+  port: 3344
+
+spring:
+  application:
+    name: cloud-config-server
+  profiles:
+    active: native  # 本地配置
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: file:///E:/code/config   # 本地文件
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+#        git:
+#          uri:    # git仓库地址
+#          search-paths:
+#            - springCloud-config  # 搜索目录
+#      label: master # 读取分支
+
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:7001/eureka
+#      defaultZone: http://eureka7002.com:7002/ eureka/,http://eureka7001.com:7001/eureka/
+
+management:
+  endpoints:  # 暴露bus刷新配置的端点   curl -X POST http://localhost:3344/actuator/bus-refresh  全局刷新配置
+    web:                            # curl -X POST http://localhost:3344/actuator/bus-refresh/cloud-config-client:5566  定点刷新配置
+      exposure:
+        include: "bus-refresh"
